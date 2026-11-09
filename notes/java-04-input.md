@@ -30,7 +30,7 @@ Maven `-q` 已压噪音；两次核心输出与讲义一致（Finished at 2026-1
 **try-with-resources**：`try (Scanner scanner = new Scanner(System.in)) { ... }` 用完自动关掉输入源，不用自己记关闭；资源和异常细节以后课再深讲。  
 **print vs println**：`print` 提示后**不换行**，光标停在提示后面方便输入；`println` 打完会换行。管道喂 stdin 时两个提示会挤在同一行，属正常。  
 **nextLine vs nextInt**：`nextLine()` 读一整行（含中文姓名）；`nextInt()` 只读下一个整数。本课先读行再读整数，暂时避开「nextInt 留下换行、下一个 nextLine 读到空行」的坑。  
-**hasNextInt 先检查再读**：中文「十八」不是整数；若直接 `nextInt()` 会崩。先 `hasNextInt()`，假就温柔报错并 `return`，真才 `nextInt()`。范围不对（< 或 >）同样 `return`。  
+**hasNextInt 先检查再读**：中文「十八」不是整数；若直接 `nextInt()` 会崩。先 `hasNextInt()`，假就温柔报错并 `return`，真才 `nextInt()`。范围不对（<0 或 >150）同样 `return`。  
 对比 Python（零基础白话）：Python 用 `input("请输入年龄：")` 得到字符串，再 `int(...)` 转整数；转失败会抛异常，常用 `try/except`。Java 这边用 `hasNextInt()` 先问「能不能当整数」，再决定读还是报错，思路类似「先检查再转换」。
 
 ## 卡过啥
