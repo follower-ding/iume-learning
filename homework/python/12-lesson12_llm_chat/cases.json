@@ -1,0 +1,6 @@
+[
+  {"file": "demo.py", "stdin": "", "stdout": "密钥来源：本地模拟，不读取密钥\n非流式：你好，学员\n流式：你好，学员\n"},
+  {"file": "answer01.py", "stdin": "", "stdout": "你好，学员\n"},
+  {"file": "answer02.py", "stdin": "", "stdout": "你好，学员\n"},
+  {"file": "answer03.py", "stdin": "", "stdout": "缺少密钥\n已配置\n"}
+]

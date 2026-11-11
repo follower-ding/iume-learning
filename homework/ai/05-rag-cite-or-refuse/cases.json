@@ -1,0 +1,48 @@
+{
+  "exercise": {
+    "checkin": {
+      "q": "入住时间是什么时候？",
+      "reason": "ok",
+      "top1_id": "faq-checkin",
+      "top1_score_approx": 0.40,
+      "citation": "faq-checkin",
+      "must_contain": "14:00"
+    },
+    "pool": {
+      "q": "游泳池几点开放？",
+      "reason": "low_score",
+      "top1_score": 0.0,
+      "answer": "知识库里没有足够依据，不能回答。"
+    },
+    "misleading": {
+      "q": "入住时间是什么时候？",
+      "draft_citation": "faq-pool",
+      "reason": "unknown_citation",
+      "answer": "知识库里没有足够依据，不能回答。",
+      "must_not_contain": "全天开放"
+    }
+  },
+  "probe_no_call": {
+    "q": "游泳池几点开放？",
+    "reason": "low_score",
+    "calls": 0
+  },
+  "probe_min_score0": {
+    "default_reason": "low_score",
+    "min0_reason": "ok",
+    "min0_best_score": 0.0,
+    "note": "门槛关掉后 0 分也会进生成；Mock 复述第一条，不是学会了挑选"
+  },
+  "probe_citation": {
+    "missing_reason": "missing_citation",
+    "unknown_reason": "unknown_citation",
+    "draft_dropped": true
+  },
+  "probe_checkout": {
+    "q": "延迟退房怎么收费？",
+    "reason": "ok",
+    "citation": "faq-checkout",
+    "must_not_contain": ["30", "90"]
+  },
+  "DEFAULT_MIN_SCORE": 0.2
+}

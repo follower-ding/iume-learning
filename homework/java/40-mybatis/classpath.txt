@@ -1,0 +1,1 @@
+/home/box/.m2/repository/org/mybatis/mybatis/3.5.19/mybatis-3.5.19.jar:/home/box/.m2/repository/com/h2database/h2/2.4.240/h2-2.4.240.jar

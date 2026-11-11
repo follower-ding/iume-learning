@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="learn.mybatis.ProductMapper">
+    <resultMap id="productMap" type="learn.mybatis.Product">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+    </resultMap>
+    <update id="createTable">CREATE TABLE IF NOT EXISTS products (id INT PRIMARY KEY, name VARCHAR(100) NOT NULL, price INT NOT NULL)</update>
+    <select id="findById" resultMap="productMap">SELECT id, name, price FROM products WHERE id = #{id}</select>
+    <insert id="insert">INSERT INTO products (id, name, price) VALUES (#{id}, #{name}, #{price})</insert>
+    <update id="update">UPDATE products SET name = #{name}, price = #{price} WHERE id = #{id}</update>
+    <delete id="delete">DELETE FROM products WHERE id = #{id}</delete>
+</mapper>

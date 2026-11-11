@@ -1,0 +1,6 @@
+[
+  {"file": "demo.py", "stdin": "", "stdout": "片段数：2\n命中：虚拟环境把依赖装在项目里。\n第一段相似度：0.69\n第二段相似度：0.50\n提示：根据笔记回答。笔记：虚拟环境把依赖装在项目里。问题：依赖装在哪里\n"},
+  {"file": "answer01.py", "stdin": "", "stdout": "学习\n笔记\n"},
+  {"file": "answer02.py", "stdin": "", "stdout": "True\nFalse\n"},
+  {"file": "answer03.py", "stdin": "", "stdout": "超时后可以按次数重试。\nNone\n"}
+]

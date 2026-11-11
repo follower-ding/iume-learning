@@ -1,0 +1,16 @@
+{
+  "exercise": {
+    "q1": {"intent": "check_in", "attempts": 1},
+    "q2": {"intent": "pets", "attempts": 1},
+    "q3": {"intent": "unknown", "attempts": 1},
+    "repair": {"intent": "check_in", "attempts": 2}
+  },
+  "probe_first_ok": {
+    "intent": "check_in",
+    "attempts": 1
+  },
+  "probe_cancel": {
+    "intent": "cancel",
+    "attempts": 1
+  }
+}

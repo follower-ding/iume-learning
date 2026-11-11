@@ -1,0 +1,11 @@
+{
+  "exercise": {
+    "model": "mock-hotel-front-desk",
+    "answer_contains": "下午 14:00",
+    "answer_full": "标准入住时间是下午 14:00。如果早到，前台可以免费寄存行李，房间需等到打扫完成才能进入。"
+  },
+  "probe_pool": {
+    "answer_contains": "只准备了",
+    "answer_full": "我目前只准备了入住、退房、早餐、停车、宠物、网络和取消这几类实验问题。"
+  }
+}

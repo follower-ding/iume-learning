@@ -1,0 +1,36 @@
+{
+  "exercise": {
+    "same_question": "延迟退房怎么收费？",
+    "rag_path": {
+      "expect": "cite faq-checkout，复述先问前台，forbid 30/60/90"
+    },
+    "agent_path": {
+      "expect": "no_tool final，反问小时数，forbid 30/60/90"
+    },
+    "priced": {
+      "q": "延迟退房 3 小时要多少钱？",
+      "expect": "tool quote_late_checkout，require 90"
+    },
+    "eval": "合计 9/9，退出码 0"
+  },
+  "cases": [
+    {"id": "cite-checkin", "kind": "rag", "expect": "cite", "source_id": "faq-checkin"},
+    {"id": "cite-breakfast", "kind": "rag", "expect": "cite", "source_id": "faq-breakfast"},
+    {"id": "cite-parking", "kind": "rag", "expect": "cite", "source_id": "faq-parking"},
+    {"id": "cite-late-no-price", "kind": "rag", "expect": "cite", "source_id": "faq-checkout", "forbid": ["30", "60", "90"]},
+    {"id": "refuse-pool", "kind": "rag", "expect": "refuse"},
+    {"id": "refuse-airport", "kind": "rag", "expect": "refuse"},
+    {"id": "agent-do-not-guess-hours", "kind": "agent", "expect": "no_tool", "forbid": ["30", "60", "90"]},
+    {"id": "agent-late-three-hours", "kind": "agent", "expect": "tool", "tool_name": "quote_late_checkout", "require": ["90"]},
+    {"id": "agent-cancel-policy", "kind": "agent", "expect": "tool", "tool_name": "lookup_policy", "require": ["24"]}
+  ],
+  "probe_high_score": {
+    "min_score": 0.99,
+    "cite_cases_all_fail_reason": "low_score",
+    "note": "不改三仓 DEFAULT_MIN_SCORE，用 build_lab_rag(min_score=0.99)；看完对照默认仍 9/9"
+  },
+  "probe_wrong_expect": {
+    "broken": "游泳池 expect=cite source_id=faq-checkin → 0/1",
+    "note": "失败看 reason，不放宽 expect / 删 forbid"
+  }
+}

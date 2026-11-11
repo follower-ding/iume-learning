@@ -1,0 +1,47 @@
+{
+  "exercise": {
+    "happy": {
+      "q": "延迟退房 2 小时要多少钱？",
+      "max_steps": 4,
+      "stopped_reason": "final",
+      "tool_names": ["quote_late_checkout"],
+      "answer_must_contain": ["合计 60 元"]
+    },
+    "capped_changing_hours": {
+      "hours_script": [1, 2, 3, 4],
+      "max_steps": 3,
+      "stopped_reason": "max_steps",
+      "steps_len": 3,
+      "answer_startswith": "达到步数上限",
+      "answer_must_not_contain": ["30", "60"]
+    }
+  },
+  "probe_max1": {
+    "q": "延迟退房 2 小时要多少钱？",
+    "max_steps": 1,
+    "stopped_reason": "max_steps",
+    "steps_len": 1,
+    "tool_result_has_60": true,
+    "answer_startswith": "达到步数上限",
+    "answer_must_not_contain": ["60"]
+  },
+  "probe_repeated": {
+    "same_call_twice": {"name": "quote_late_checkout", "arguments": {"hours": 2}},
+    "stopped_reason": "repeated_tool",
+    "answer": "重复调用同一工具，已停止。",
+    "second_tool_result": null
+  },
+  "probe_unknown": {
+    "name": "shell",
+    "stopped_reason": "unknown_tool",
+    "executed": false
+  },
+  "probe_invalid": {
+    "repair": {"kinds": ["invalid", "final"], "stopped_reason": "final"},
+    "capped": {"max_steps": 3, "stopped_reason": "max_steps", "answer_no_price": true}
+  },
+  "signatures": {
+    "same_hours_repeated": true,
+    "changing_hours_not_repeated": true
+  }
+}

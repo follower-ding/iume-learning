@@ -1,0 +1,39 @@
+{
+  "exercise": {
+    "count": 7,
+    "dimension": 209,
+    "queries": [
+      {
+        "q": "入住时间是什么时候？",
+        "top1_id": "faq-checkin",
+        "top1_score_approx": 0.40,
+        "top2_score_below": 0.15
+      },
+      {
+        "q": "早餐时间是什么时候？",
+        "top1_id": "faq-breakfast",
+        "top1_score_approx": 0.36
+      },
+      {
+        "q": "游泳池几点开放？",
+        "all_scores": 0.0,
+        "top3_ids_alpha": ["faq-breakfast", "faq-cancel", "faq-checkin"]
+      }
+    ]
+  },
+  "probe_k1": {
+    "k": 1,
+    "q": "入住时间是什么时候？",
+    "hits": 1,
+    "top1_id": "faq-checkin"
+  },
+  "probe_reject": {
+    "dup_id": "ValueError",
+    "dim_add": "VectorDimensionError",
+    "dim_search": "VectorDimensionError"
+  },
+  "probe_tie_break": {
+    "pool_top3": ["faq-breakfast", "faq-cancel", "faq-checkin"],
+    "manual_tie": ["a", "b"]
+  }
+}

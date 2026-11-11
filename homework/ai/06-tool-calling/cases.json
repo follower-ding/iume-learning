@@ -1,0 +1,45 @@
+{
+  "exercise": {
+    "with_hours": {
+      "q": "延迟退房 2 小时要多少钱？",
+      "action": "tool_call",
+      "name": "quote_late_checkout",
+      "arguments": {"hours": 2},
+      "tool_result_must_contain": ["合计 60 元", "30"]
+    },
+    "no_hours": {
+      "q": "延迟退房怎么收费？",
+      "action": "final",
+      "must_ask_hours": true,
+      "must_not_contain": ["30", "合计"]
+    },
+    "shell": {
+      "name": "shell",
+      "decision": "拒绝"
+    },
+    "hours_true": {
+      "raises": "ToolArgumentError",
+      "message": "hours 需要 1 到 12 的整数"
+    }
+  },
+  "probe_no_hours": {
+    "q": "延迟退房要多少钱？",
+    "action": "final",
+    "must_not_contain": ["30", "合计"]
+  },
+  "probe_allowlist": {
+    "parse_ok": true,
+    "execute": false,
+    "allowed": ["lookup_policy", "quote_late_checkout"]
+  },
+  "probe_bad_hours": {
+    "ok_hours": 2,
+    "ok_total": 60,
+    "reject": [true, false, 13, 0, 1.5, "2", null]
+  },
+  "probe_price_from_tool": {
+    "fake_total_in_args": "999 元",
+    "real_total": "合计 60 元"
+  },
+  "HOURLY_RATE": 30
+}

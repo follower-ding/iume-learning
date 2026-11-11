@@ -1,0 +1,11 @@
+试着编译下面这行会失败（接口不能直接实例化）：
+
+  PricingPolicy policy = new PricingPolicy();
+
+正确写法：左边是接口类型（引用），右边是具体实现对象：
+
+  PricingPolicy policy = new FullPricePolicy();
+  PricingPolicy policy = new PercentageDiscountPolicy(new BigDecimal("0.10"));
+  PricingPolicy policy = new FixedDiscountPolicy(new BigDecimal("5.00"));
+
+静态类型是 PricingPolicy；运行时真正执行哪个 apply，由右边那个对象决定（多态）。

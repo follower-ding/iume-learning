@@ -1,0 +1,22 @@
+{
+  "exercise": {
+    "chunks": 18,
+    "size": 80,
+    "overlap": 20,
+    "dimension": 209,
+    "scores": [
+      {"q": "入住时间是什么时候？", "cosine_approx": 0.40},
+      {"q": "我什么时候能进房间", "cosine_approx": 0.23},
+      {"q": "今晚有乐队演出吗", "cosine_approx": 0.00}
+    ]
+  },
+  "probe_overlap": {
+    "size": 80,
+    "overlap": 80,
+    "expect": "ValueError"
+  },
+  "probe_shared_idf": {
+    "doc_fit_dimension": 209,
+    "query_alone_fit_dimension": 7
+  }
+}
