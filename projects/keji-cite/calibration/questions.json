@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "locked_before_scores": true,
+  "note": "角色在查看任何融合分之前写定。choose_threshold 只使用 calibrate_positive 与 calibrate_negative。保留集和观察项不参与定阈值。看到分数之后不改角色、不删题、不改 k1/b。",
+  "questions": [
+    {
+      "id": "cal-pos-add",
+      "role": "calibrate_positive",
+      "text": "两路原始分不能直接相加",
+      "expect_file": "notes/ai-09-hybrid-retrieval.md"
+    },
+    {
+      "id": "cal-pos-overlap",
+      "role": "calibrate_positive",
+      "text": "overlap 必须小于 size",
+      "expect_file": "notes/ai-03-embedding-chunking.md"
+    },
+    {
+      "id": "cal-pos-dim",
+      "role": "calibrate_positive",
+      "text": "维度不一致不截断不补零",
+      "expect_file": "notes/ai-04-vector-store.md"
+    },
+    {
+      "id": "cal-pos-self",
+      "role": "calibrate_positive",
+      "text": "自调用不经过代理",
+      "expect_file": "notes/java-41-spring-boot.md"
+    },
+    {
+      "id": "cal-pos-bigram",
+      "role": "calibrate_positive",
+      "text": "字符二元组不是神经网络嵌入",
+      "expect_file": "notes/ai-03-embedding-chunking.md"
+    },
+    {
+      "id": "cal-neg-ticket",
+      "role": "calibrate_negative",
+      "text": "明天门票多少钱"
+    },
+    {
+      "id": "cal-neg-cook",
+      "role": "calibrate_negative",
+      "text": "红烧肉要放多少糖"
+    },
+    {
+      "id": "cal-neg-stock",
+      "role": "calibrate_negative",
+      "text": "纳斯达克今天收盘点位"
+    },
+    {
+      "id": "cal-neg-pudding",
+      "role": "calibrate_negative",
+      "text": "芒果布丁怎么做"
+    },
+    {
+      "id": "cal-neg-visa",
+      "role": "calibrate_negative",
+      "text": "申根签证材料清单"
+    },
+    {
+      "id": "cal-neg-gacha",
+      "role": "calibrate_negative",
+      "text": "氪金抽卡保底规则"
+    },
+    {
+      "id": "hold-pos-low",
+      "role": "holdout_positive",
+      "text": "低分不调用模型",
+      "expect_file": "notes/ai-05-rag-cite-or-refuse.md"
+    },
+    {
+      "id": "hold-pos-fit",
+      "role": "holdout_positive",
+      "text": "查询共用文档那次 fit 的 vocab",
+      "expect_file": "notes/ai-03-embedding-chunking.md"
+    },
+    {
+      "id": "hold-pos-zero",
+      "role": "holdout_positive",
+      "text": "检索分数为 0 仍把第一段塞进提示",
+      "expect_file": "notes/java-42-ai-lab.md"
+    },
+    {
+      "id": "hold-neg-movie",
+      "role": "holdout_negative",
+      "text": "明天的电影票多少钱"
+    },
+    {
+      "id": "hold-neg-bus",
+      "role": "holdout_negative",
+      "text": "机场大巴末班是几点"
+    },
+    {
+      "id": "hold-neg-calorie",
+      "role": "holdout_negative",
+      "text": "这道菜的热量是多少"
+    },
+    {
+      "id": "obs-pool",
+      "role": "observe",
+      "text": "游泳池几点开放"
+    }
+  ]
+}

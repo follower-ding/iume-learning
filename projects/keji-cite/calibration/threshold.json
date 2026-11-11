@@ -1,0 +1,23 @@
+{
+  "course_threshold_0_30_used": false,
+  "gap": true,
+  "max_negative": 0.6349354121487876,
+  "max_negative_id": "cal-neg-pudding",
+  "min_positive": 0.6615247792362674,
+  "min_positive_id": "cal-pos-self",
+  "rule": "gap_midpoint_else_just_above_max_negative",
+  "threshold": 0.6482300956925275,
+  "used_ids": [
+    "cal-neg-cook",
+    "cal-neg-gacha",
+    "cal-neg-pudding",
+    "cal-neg-stock",
+    "cal-neg-ticket",
+    "cal-neg-visa",
+    "cal-pos-add",
+    "cal-pos-bigram",
+    "cal-pos-dim",
+    "cal-pos-overlap",
+    "cal-pos-self"
+  ]
+}

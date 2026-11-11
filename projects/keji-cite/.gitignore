@@ -1,0 +1,10 @@
+# 生成的索引。提问前在本机重建，不提交。
+.index/
+
+# 本机环境
+.venv/
+venv/
+
+# Python 缓存
+__pycache__/
+*.pyc
